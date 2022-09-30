@@ -63,7 +63,6 @@
 - 异常也叫中断，异常是打断处理器正常进程的系统调用，注意异常是操作系统的行为。
 - 产生溢出的这条指令地址会保存在一个名为EPC的寄存器中(EPC是异常程序计数器，不是通用寄存器)，然后计算机会跳转到一个预先设置好的地址去执行相应的异常处理程序，执行完之后返回到原来的程序中继续执行(通过寄存器跳转指令跳转到原程序中，但是由于EPC不是通用寄存器，因此我们需要使用一个名为mfc0的指令将EPC中的地址传到通用寄存器中)。
 ### 三、乘法运算：
-<<<<<<< HEAD
 ##### 1.二进制基础乘法器：
 ![](https://nickaljy-pictures.oss-cn-hangzhou.aliyuncs.com/乘法器(1)_页面_1.jpg)![](https://nickaljy-pictures.oss-cn-hangzhou.aliyuncs.com/乘法器(1)_页面_2.jpg)
 ##### 2.改进版的二进制乘法器：
@@ -92,41 +91,3 @@
 ![](https://nickaljy-pictures.oss-cn-hangzhou.aliyuncs.com/AF305B78CFAB8B469AB19FB49C7FCF2D.png)
 
 
-=======
-##### 1.二进制的乘法运算：
-- 二进制的乘法运算和十进制的乘法运算相同，都能够采用列竖式的方式进行。
-- 二进制的乘法运算更为简单，原因是只有1 x 1，1 x 0，0 x 0这三种情况。
-- 下面将使用列竖式乘法的方式计算二进制：1000 x 1001
-```
-	 1000
-	x
-	 1001
-	——————
-	 1000
-	0000
-   0000
-  1000
-  ————————
-  1001000	 
-```
-- 观察上面这个二进制的乘法运算：
-	- 我们定义被乘数是1000，乘数是1001。
-	- 我们可以从上面这个二进制乘法运算中发现一些算法从而将乘法运算转换成加法运算。
-	- 乘数每次向右移动一位，并且我们只需要乘数的最右一位。被乘数每次向左移动一位。
-		- 1.首先，乘数的最右一位是1，把被乘数放到一个寄存器a中。
-		- 2.其次，右移乘数，左移被乘数。
-		- 3.此时乘数最右一位为0，因此继续右移乘数，左移被乘数。
-		- 4.此时乘数的最右一位依旧为0，因此继续右移乘数，左移被乘数。
-		- 5.此时乘数的最后一位是1，把此时的被乘数加到寄存器a中。
-		- 6.此时寄存器a中的结果就是二进制乘法运算的结果。
-##### 2.根据上面的二进制乘法算法设置我们的乘法器：
-![](https://nickaljy-pictures.oss-cn-hangzhou.aliyuncs.com/Page1(1)_页面_1.jpg)
-
-![](https://nickaljy-pictures.oss-cn-hangzhou.aliyuncs.com/Page1(1)_页面_2.jpg)
-
-![](https://nickaljy-pictures.oss-cn-hangzhou.aliyuncs.com/Page1(1)_页面_3.jpg)
-
-![](https://nickaljy-pictures.oss-cn-hangzhou.aliyuncs.com/Page1(1)_页面_4.jpg)
-
-![](https://nickaljy-pictures.oss-cn-hangzhou.aliyuncs.com/Page1(1)_页面_5.jpg)
->>>>>>> d248944 (The third commit and Chapter 03)
